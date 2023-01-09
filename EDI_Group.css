@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Arimo&family=Chivo+Mono:wght@200&display=swap');
+
+body{
+    font-family: 'Arimo', sans-serif;
+    font-family: 'Chivo Mono', monospace;
+}
+
+.headliner1{
+    text-align: center;
+}
+
+.container{
+    text-align: center;
+}
+
