@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+    <script src = 'EDI_api2.js'></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="EDI_Group.css" rel="stylesheet" type="text/css">
+    <title>EDI project</title>
+</head>
+<body>
+<div class = 'headliner1'>
+    <h1>EDI - FINAL GROUP PROJECT</h1>
+    <p>Nikita Svityk, 225270</p>
+    <p>Aleksander Ziętkiewicz, 227445</p>
+    <p>ZZISS-1114</p>
+</div>
+
+<div class = 'chart-container'>
+    <canvas id="pieChart"></canvas>
+    <canvas id="barChart"></canvas>
+</div>
+
+
+<div class = 'container'>
+    
+    <table class="table table-bordered">
+        <thead class = "table-dark"> 
+        <tr>
+            <th scope="col">Nickname</th>
+            <th scope="col">Active</th>
+            <th scope="col">Real Name</th>
+            <th scope="col">Date Of Birth</th>
+            <th scope="col">Country Of Birth</th>
+        </tr>
+        </thead>
+        <tbody id = "table-body">
+        </tbody>
+  </table>
+</div>
+
+
+</body>
+</html>
