@@ -1,8 +1,31 @@
-fetch('https://my.api.mockaroo.com/edi.json?key=12a6d260').then((data) =>{
-    //console.log(data);
-    return data.json();
-}).then((objectData) => {
-    console.log(objectData[0].Nickname);
+var xmlhttp = new XMLHttpRequest();
+var url = "";
+var data = [];
+
+
+function get_data(file_url) {
+  xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        var myArr = JSON.parse(this.responseText);
+        draw_graphs(myArr);
+    }
+};
+  xmlhttp.open("GET", file_url, true);
+  xmlhttp.send();
+}
+
+function fetch1() {
+  get_data("https://raw.githubusercontent.com/qwertyuszxc/EDI/main/edi.json");
+}
+function fetch2() {
+  get_data("https://raw.githubusercontent.com/qwertyuszxc/EDI/main/edi2.json");
+}
+function fetch3() {
+  get_data("https://raw.githubusercontent.com/qwertyuszxc/EDI/main/edi3.json");
+}
+
+function draw_graphs(objectData) {
+
     let tableData ='';
     let activeCount = 0;
     let notActiveCount = 0;
@@ -17,8 +40,8 @@ fetch('https://my.api.mockaroo.com/edi.json?key=12a6d260').then((data) =>{
             notActiveCount++;
         }
 
-        const birthDate = new Date(values.Date_of_birth);
-        const age = 2022 - birthDate.getFullYear();
+        // const birthDate = new Date();
+        const age = 2022 - parseInt(values.Date_of_birth.slice(6,10));
         console.log(`Wiek dla ${values.Real_Name}: ${age}`);
         if (age < 21) {
             ageBuckets[0]++;
@@ -29,7 +52,8 @@ fetch('https://my.api.mockaroo.com/edi.json?key=12a6d260').then((data) =>{
         }
     });
 
-    objectData.map((values) => {
+
+        objectData.map((values) => {
         tableData+=         `<tr>
         <td>${values.Nickname}</td>
         <td>${values.Active}</td>
@@ -64,8 +88,8 @@ fetch('https://my.api.mockaroo.com/edi.json?key=12a6d260').then((data) =>{
             }],
         },
     });
-    pieChart.canvas.parentNode.style.height = '400px';
-    pieChart.canvas.parentNode.style.width = '400px';
+    pieChart.canvas.parentNode.style.height = '800px';
+    pieChart.canvas.parentNode.style.width = '800px';
     pieChart.canvas.parentNode.style.float = 'right';
 
     
@@ -94,4 +118,4 @@ const barChart2 = new Chart(ctx2, {
 });
 
 
-})
+}

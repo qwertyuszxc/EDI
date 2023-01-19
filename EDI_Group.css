@@ -1,5 +1,63 @@
 @import url('https://fonts.googleapis.com/css2?family=Arimo&family=Chivo+Mono:wght@200&display=swap');
 
+.table1{
+    overflow-y:scroll;
+    height:800px;
+    display:block;
+}
+
+.buttons{
+    display: flex;
+    justify-content: flex-start;
+}
+
+button{
+    margin-bottom: 2px;
+    padding: 15px 32px;
+    font-size: 16px;
+    transition-duration: 0.4s;
+    margin-right: 85px;
+  }
+
+.button1 {
+    background-color: white; 
+    color: black; 
+    border: 2px solid #4CAF50;
+}
+
+.button1:hover {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.button2{
+    background-color: white; 
+    color: black; 
+    border: 2px solid #4CAF50;
+}
+
+.button2:hover {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.button3{
+    background-color: white; 
+    color: black; 
+    border: 2px solid #4CAF50;
+}
+
+.button3:hover {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.chart_container{
+    display: flex;
+    flex-direction: row;
+
+}
+
 body{
     font-family: 'Arimo', sans-serif;
     font-family: 'Chivo Mono', monospace;
@@ -10,6 +68,8 @@ body{
 }
 
 .container{
+    display: flex;
     text-align: center;
+    width: 1000px;
 }
 
